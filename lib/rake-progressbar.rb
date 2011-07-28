@@ -5,18 +5,23 @@ class RakeProgressbar
   attr_accessor :maximal, :actual, :cols, :finish, :started, :percent, :last_percent, :last_time_dif
 
   def initialize(maximal)
-    self.started = Time.now
-    self.actual = -1
-    self.last_percent = -1
-    self.cols = detect_terminal_size[0] - 3
-    self.cols = 80 if self.cols.nil? || self.cols < 80
-    self.maximal = maximal
-    self.finish = false
-    STDOUT.sync = true
-    if maximal == 0
-      puts "nothing to do"
+    if maximal.nil? || maximal < 1
+      return nil
     else
-      count_up
+      self.maximal = maximal
+      self.started = Time.now
+      self.actual = -1
+      self.last_percent = -1
+      self.cols = detect_terminal_size[0] - 3
+      self.cols = 80 if self.cols.nil? || self.cols < 80
+      self.finish = false
+      STDOUT.sync = true
+      if maximal == 0
+        puts "nothing to do"
+      else
+        count_up
+      end
+      return self
     end
   end
 
