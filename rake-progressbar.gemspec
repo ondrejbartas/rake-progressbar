@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/rake-progressbar.rb",
+    "rake-progressbar.gemspec",
     "test/helper.rb",
     "test/test_rake-progressbar.rb"
   ]
