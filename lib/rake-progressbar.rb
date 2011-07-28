@@ -25,7 +25,7 @@ class RakeProgressbar
     end
   end
 
-  def count_up
+  def inc
     self.actual += 1
     self.percent = (self.actual.to_f/self.maximal.to_f*100.0)
     
