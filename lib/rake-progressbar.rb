@@ -19,7 +19,7 @@ class RakeProgressbar
       if maximal == 0
         puts "nothing to do"
       else
-        count_up
+        inc
       end
       return self
     end
