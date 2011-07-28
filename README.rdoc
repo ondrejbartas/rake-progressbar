@@ -3,8 +3,9 @@
 Progress bar for long runnung jobs in terminal - useful mostly for rake tasks (imports, exports, archives etc.)
 
 == Usage
+RakeProgressbar.new(maximal_count) - in maximal count you are passing number 1> ho many jobs (increments you will perform) 
 
- bar = RakeProgressbar.new(0)
+ bar = RakeProgressbar.new(100)
  100.times do 
   bar.inc
  end
