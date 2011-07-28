@@ -4,11 +4,11 @@ Progress bar for long runnung jobs in terminal - useful mostly for rake tasks (i
 
 == Usage
 
-	bar = RakeProgressbar.new(0)
-	100.times do 
-		bar.inc
-	end
-	bar.finished
+ bar = RakeProgressbar.new(0)
+ 100.times do 
+  bar.inc
+ end
+ bar.finished
 	
 It will generate:
  25.2% [#####_______________] 01:02:30 -> 00:25:13 
