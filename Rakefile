@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rake-progressbar"
   gem.homepage = "http://github.com/ondrejbartas/rake-progressbar"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Showing progress of long going rake tasks - importing, archivieng etc."
+  gem.description = "Easy to use, shows estimated time to finish, elapsed time, percantage, not slowing with very fast jobs (terminal rescreen issue)"
   gem.email = "o.bartas@gmail.com"
   gem.authors = ["Ondřej Bartas"]
   # dependencies defined in Gemfile
