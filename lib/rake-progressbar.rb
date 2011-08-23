@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Progress Bar a la Homebrew for Ruby Scripts
 # ===========================================
 
