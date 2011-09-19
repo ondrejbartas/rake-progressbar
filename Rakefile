@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rake-progressbar"
   gem.homepage = "http://github.com/ondrejbartas/rake-progressbar"
   gem.license = "MIT"
-  gem.version     = "0.0.2"
+  gem.version     = "0.0.3"
   gem.summary = "Showing progress of long going rake tasks - importing, archivieng etc."
   gem.description = "Easy to use, shows estimated time to finish, elapsed time, percantage, not slowing with very fast jobs (terminal rescreen issue)"
   gem.email = "o.bartas@gmail.com"
