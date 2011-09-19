@@ -16,7 +16,6 @@ class RakeProgressbar
       self.cols = detect_terminal_size[0] - 3
       self.cols = 80 if self.cols.nil? || self.cols < 80
       self.finish = false
-      STDOUT.sync = true
       if maximal == 0
         puts "nothing to do"
       else
@@ -57,6 +56,7 @@ class RakeProgressbar
       STDOUT.print( ("_")* ((100-self.percent)*((self.cols-31).to_f/100)).to_i)
       STDOUT.print( "] "+(Time.at(remaining  - 60*60).strftime('%H:%M:%S')) )
       STDOUT.print( (" -> ")+(Time.at(time_dif - 60*60).strftime('%H:%M:%S'))+" " )
+      STDOUT.flush
       self.last_percent = (self.percent*10).to_i
       self.last_time_dif = time_dif
     end
@@ -76,7 +76,7 @@ class RakeProgressbar
       else
         STDOUT.print "Finished in #{Time.now - self.started}s\n"
       end
-      STDOUT.sync = false
+      STDOUT.flush
       self.finish = true
     end
   end
