@@ -16,6 +16,6 @@ It will generate:
 	
 == Copyright
 
-Copyright (c) 2011 Ondřej Bartas. See LICENSE.txt for
+Copyright (c) 2011 Ondrej Bartas. See LICENSE.txt for
 further details.
 
