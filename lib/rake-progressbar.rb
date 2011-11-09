@@ -1,6 +1,4 @@
 # -*- encoding : utf-8 -*-
-# Progress Bar a la Homebrew for Ruby Scripts
-# ===========================================
 
 class RakeProgressbar
   attr_accessor :maximal, :actual, :cols, :finish, :started, :percent, :last_percent, :last_time_dif
