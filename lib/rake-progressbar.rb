@@ -11,7 +11,7 @@ class RakeProgressbar
       self.started = Time.now
       self.actual = -1
       self.last_percent = -1
-      self.cols = detect_terminal_size[0] - 3
+      self.cols = detect_terminal_size[0] - 3 if detect_terminal_size
       self.cols = 80 if self.cols.nil? || self.cols < 80
       self.finish = false
       if maximal == 0
