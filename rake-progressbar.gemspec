@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rake-progressbar"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ondrej Bartas"]
-  s.date = "2011-11-07"
+  s.date = "2012-02-25"
   s.description = "Easy to use, shows estimated time to finish, elapsed time, percantage, not slowing with very fast jobs (terminal rescreen issue)"
   s.email = "o.bartas@gmail.com"
   s.extra_rdoc_files = [
