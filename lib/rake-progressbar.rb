@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
 
 class RakeProgressbar
-  attr_accessor :maximal, :actual, :cols, :finish, :started, :percent, :last_percent, :last_time_dif
+  attr_accessor :maximal, :actual, :cols, :finish, :started, :percent, :last_percent, :last_time_dif, :silent
 
-  def initialize(maximal)
+  def initialize(maximal, silence = false)
     if maximal.nil? || maximal < 1
       return nil
     else
@@ -14,6 +14,7 @@ class RakeProgressbar
       self.cols = detect_terminal_size[0] - 3 if detect_terminal_size
       self.cols = 80 if self.cols.nil? || self.cols < 80
       self.finish = false
+      self.silent = silence
       if maximal == 0
         puts "nothing to do"
       else
@@ -35,6 +36,10 @@ class RakeProgressbar
   end
 
   def display
+    if self.silent
+      return nil
+    end
+
     time_dif = ((Time.now - self.started)).to_i
     if self.percent == 0
       remaining = 0
@@ -68,13 +73,17 @@ class RakeProgressbar
       if self.maximal != 0
         display
       end
-      STDOUT.print "\n"
-      if show_actual
-        STDOUT.print "Finished #{self.actual} in #{Time.now - self.started}s\n"
-      else
-        STDOUT.print "Finished in #{Time.now - self.started}s\n"
+
+      unless self.silent
+        STDOUT.print "\n"
+        if show_actual
+          STDOUT.print "Finished #{self.actual} in #{Time.now - self.started}s\n"
+        else
+          STDOUT.print "Finished in #{Time.now - self.started}s\n"
+        end
+        STDOUT.flush
       end
-      STDOUT.flush
+
       self.finish = true
     end
   end
