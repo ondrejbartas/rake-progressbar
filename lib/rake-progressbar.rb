@@ -52,8 +52,8 @@ class RakeProgressbar
       STDOUT.print("\r#{percent_out}% ")
       STDOUT.print( "["+("#" * (self.percent*((self.cols-31).to_f/100)).to_i))
       STDOUT.print( ("_")* ((100-self.percent)*((self.cols-31).to_f/100)).to_i)
-      STDOUT.print( "] "+(Time.at(remaining  - 60*60).strftime('%H:%M:%S')) )
-      STDOUT.print( (" -> ")+(Time.at(time_dif - 60*60).strftime('%H:%M:%S'))+" " )
+      STDOUT.print( "] "+(Time.at(remaining).utc.strftime('%H:%M:%S')) )
+      STDOUT.print( (" -> ")+(Time.at(time_dif).utc.strftime('%H:%M:%S'))+" " )
       STDOUT.flush
       self.last_percent = (self.percent*10).to_i
       self.last_time_dif = time_dif
